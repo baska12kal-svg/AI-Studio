@@ -145,15 +145,16 @@ AI Studio создаётся как полноценная локальная с
 
 # Документация
 
-В процессе подготовки находятся:
+## Пользователю
 
-- Архитектура проекта
-- Руководство по установке
-- Руководство разработчика
-- API
-- Система агентов
-- Memory Engine
-- Tool Manager
+- INSTALL_RU.md — установка (Русский)
+- INSTALL.md — installation guide (English)
+
+## Разработка
+
+- ROADMAP.md
+- CHANGELOG.md
+- CONTRIBUTING.md
 
 ---
 

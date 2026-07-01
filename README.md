@@ -132,17 +132,18 @@ The first public release will include complete step-by-step instructions for Lin
 
 ## Documentation
 
-Documentation is currently under development.
+### User
 
-Planned documentation includes:
+- README.md — project overview
+- INSTALL.md — installation guide (English)
+- INSTALL_RU.md — инструкция по установке (Русский)
 
-- Architecture
-- Installation Guide
-- Development Guide
-- API Reference
-- Agent System
-- Memory System
-- Tool Manager
+### Development
+
+- ROADMAP.md
+- CHANGELOG.md
+- CONTRIBUTING.md
+- ARCHITECTURE.md
 
 ---
 
