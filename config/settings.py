@@ -1,8 +1,0 @@
-OLLAMA_HOST = "http://127.0.0.1:11434"
-MODEL = "qwen2.5-coder:7b"
-
-PROJECT_NAME = "AI-Studio"
-
-TEMPERATURE = 0.2
-
-MAX_CONTEXT = 8192

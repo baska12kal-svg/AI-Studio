@@ -1,18 +1,16 @@
 from ollama import Client
+from core.config import config
 
-HOST = "http://127.0.0.1:11434"
-MODEL = "qwen2.5-coder:7b"
-
-client = Client(host=HOST)
+client = Client(host=config.host)
 
 
 def ask(prompt: str) -> str:
     response = client.generate(
-        model=MODEL,
+        model=config.model,
         prompt=prompt,
         options={
-            "temperature": 0.2
-        }
+            "temperature": config.temperature,
+        },
     )
 
     return response["response"].strip()
