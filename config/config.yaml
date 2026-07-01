@@ -1,0 +1,11 @@
+model: qwen3:8b
+
+host: http://localhost:11434
+
+temperature: 0.3
+
+timeout: 120
+
+max_tokens: 4096
+
+logging: true

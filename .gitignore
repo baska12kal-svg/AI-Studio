@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual env
+.venv/
+venv/
+
+# Logs
+logs/*.log
+
+# IDE
+.vscode/
+.idea/
+
+# Linux
+.DS_Store
+
+# Ollama cache
+*.gguf
+
+# Secrets
+.env
+
+# Tests
+.pytest_cache/
+
+# Build
+dist/
+build/
+
+# Git
+*.orig
