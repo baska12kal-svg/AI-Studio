@@ -1,8 +1,9 @@
-from core.llm import ask
-from core.logger import log
+from core.conversation import Conversation
 
 print("AI-Studio")
 print("Введите exit для выхода.\n")
+
+conversation = Conversation()
 
 while True:
     prompt = input(">>> ")
@@ -10,12 +11,6 @@ while True:
     if prompt.lower() == "exit":
         break
 
-    log("USER: " + prompt)
-
-    answer = ask(prompt)
-
-    log("AI: " + answer)
-
     print()
-    print(answer)
+    print(conversation.send(prompt))
     print()
