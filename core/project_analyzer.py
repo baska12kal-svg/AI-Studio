@@ -1,4 +1,5 @@
 from pathlib import Path
+from core.project_types import ProjectFile
 
 
 IGNORE = {
@@ -22,7 +23,7 @@ class ProjectAnalyzer:
         self._walk(self.root, result, 0)
         return result
 
-    def index(self) -> list[dict]:
+    def index(self) -> list[ProjectFile]:
         """
         Возвращает информацию обо всех файлах проекта.
         """
@@ -96,10 +97,11 @@ class ProjectAnalyzer:
                 stat = entry.stat()
 
                 files.append(
-                    {
-                        "name": entry.name,
-                        "path": str(entry.relative_to(self.root)),
-                        "suffix": entry.suffix,
-                        "size": stat.st_size,
-                    }
+                   ProjectFile(
+                     name=entry.name,
+                     path=str(entry.relative_to(self.root)),
+                     suffix=entry.suffix,
+                     size=stat.st_size,
+                    )                
                 )
+

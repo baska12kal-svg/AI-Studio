@@ -39,11 +39,11 @@ class Project:
 
         for file in self.files:
 
-            if file["suffix"] != ".py":
+            if file.suffix != ".py":
                 continue
 
             info = self.scanner.scan(
-                file["path"]
+                file.path
             )
 
             self.classes.extend(
@@ -64,14 +64,14 @@ class Project:
         return [
             file
             for file in self.files
-            if file["suffix"] == ".py"
+            if file.suffix == ".py"
         ]
 
     def find_file(self, name: str):
 
         for file in self.files:
 
-            if file["name"] == name:
+            if file.name == name:
                 return file
 
         return None
