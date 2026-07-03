@@ -2,6 +2,7 @@ from tools.registry import ToolRegistry
 from tools.result import ToolResult
 from tools.tool import Tool
 from tools.filesystem import FilesystemTool
+from tools.terminal import TerminalTool
 
 
 class ToolManager:
@@ -12,6 +13,7 @@ class ToolManager:
     def __init__(self):
         self.registry = ToolRegistry()
         self.register(FilesystemTool())
+        self.register(TerminalTool())
 
     def register(self, tool: Tool) -> None:
         self.registry.register(tool)
