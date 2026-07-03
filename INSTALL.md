@@ -1,60 +1,58 @@
-# AI Studio Installation
+# Installing AI Studio
 
-This guide explains how to install AI Studio from scratch.
+> Version: v0.2.0-alpha
+
+---
+
+# Notice
+
+AI Studio is currently in active development.
+
+This guide is intended for developers and contributors who want to explore the project or participate in its development.
 
 ---
 
 # Requirements
 
-Install:
+Before installing AI Studio, make sure the following software is available:
 
+- Python 3.12 or newer
 - Git
-- Python 3.12+
 - Ollama
 
 ---
 
-# Clone Repository
-
-SSH
+# 1. Clone the Repository
 
 ```bash
-git clone git@github.com:baska12kal-svg/AI-Studio.git
-```
+git clone <repository-url>
 
-HTTPS
-
-```bash
-git clone https://github.com/baska12kal-svg/AI-Studio.git
-```
-
-Enter the project directory.
-
-```bash
 cd AI-Studio
 ```
 
 ---
 
-# Create Virtual Environment
-
-Linux
+# 2. Create a Virtual Environment
 
 ```bash
 python -m venv .venv
+```
+
+Linux / macOS
+
+```bash
 source .venv/bin/activate
 ```
 
 Windows
 
 ```powershell
-python -m venv .venv
 .venv\Scripts\activate
 ```
 
 ---
 
-# Install Dependencies
+# 3. Install Dependencies
 
 ```bash
 pip install -r requirements.txt
@@ -62,73 +60,101 @@ pip install -r requirements.txt
 
 ---
 
-# Install Ollama
+# 4. Install Ollama
 
-Download Ollama from:
+Download Ollama from the official website.
 
-https://ollama.com
-
-Verify installation.
-
-```bash
-ollama --version
-```
-
----
-
-# Download a Model
+After installation, download a language model.
 
 Example:
 
 ```bash
-ollama pull qwen3:8b
+ollama pull qwen3
 ```
 
 or
 
 ```bash
-ollama pull llama3.1:8b
+ollama pull llama3
 ```
 
 ---
 
-# Configure AI Studio
+# 5. Verify Ollama
 
-Open:
-
-```
-config/config.yaml
+```bash
+ollama list
 ```
 
-Example:
+If the model appears in the list, Ollama is ready.
 
-```yaml
-model: qwen3:8b
-host: http://localhost:11434
-temperature: 0.2
+---
+
+# 6. Run AI Studio
+
+From the project root:
+
+```bash
+python main.py
 ```
 
 ---
 
-# Verify Installation
+# 7. Verify the Installation
+
+Compile all tools:
 
 ```bash
-python -m tests.test_chat
+python -m py_compile tools/*.py
+python -m py_compile tests/tools/*.py
 ```
 
-Then:
+Run Filesystem Tool tests:
 
 ```bash
-python -m tests.test_project_query
+python -m tests.tools.test_filesystem
 ```
 
-If both commands complete successfully, AI Studio is ready to use.
+Run Terminal Tool tests:
+
+```bash
+python -m tests.tools.test_terminal
+```
+
+All commands should finish without errors.
+
+---
+
+# Project Structure
+
+Main directories:
+
+```text
+agents/
+config/
+core/
+docs/
+memory/
+projects/
+prompts/
+tests/
+tools/
+web/
+```
 
 ---
 
 # Troubleshooting
 
-## Ollama is not running
+## Python is not found
+
+Make sure Python is installed and available in your PATH.
+
+---
+
+## Ollama does not start
+
+Try running:
 
 ```bash
 ollama serve
@@ -136,25 +162,28 @@ ollama serve
 
 ---
 
-## Model not found
+## Dependency installation fails
+
+Upgrade pip:
 
 ```bash
-ollama pull qwen3:8b
+python -m pip install --upgrade pip
 ```
+
+Then install the requirements again.
 
 ---
 
-## Missing Python packages
+# Next Steps
 
-```bash
-pip install -r requirements.txt
-```
-
----
-
-# Documentation
+After installation, it is recommended to read:
 
 - README.md
 - ROADMAP.md
-- CHANGELOG.md
 - CONTRIBUTING.md
+
+---
+
+AI Studio is under active development.
+
+Starting with **v0.2.0-alpha**, the project includes a unified Tool System that provides the foundation for future autonomous development features.

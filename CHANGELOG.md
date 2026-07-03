@@ -1,84 +1,83 @@
 # Changelog
 
-All notable changes to this project will be documented in this file.
+All notable changes to AI Studio are documented in this file.
 
-The format is based on Keep a Changelog.
-
-This project follows Semantic Versioning.
+The project follows incremental releases where every version introduces a complete subsystem of the architecture.
 
 ---
 
-## [0.1.0-alpha] - 2026-07-01
+# [0.2.0-alpha] - 2026
 
-### Added
+## Added
 
-#### Core
+### Tool System
 
-- Configuration system
-- Logger
+- Unified Tool API
+- Tool Manager
+- Tool Registry
+- Tool Result
+
+### Tools
+
+- Filesystem Tool
+- Terminal Tool
+
+### Testing
+
+- Filesystem Tool tests
+- Terminal Tool tests
+
+### Architecture
+
+- First execution layer
+- Unified tool interface
+- Modular tool infrastructure
+
+---
+
+## Improved
+
+- Internal project architecture
+- Tool abstraction
+- Repository documentation
+- Installation guides
+- Development workflow
+
+---
+
+## Notes
+
+This release marks the completion of the first version of the Tool System.
+
+Future development will focus on the Memory Engine and expanding the available development tools.
+
+---
+
+# [0.1.0-alpha]
+
+Initial public alpha.
+
+## Added
+
+### Core
+
+- Configuration
+- Logging
 - Prompt Loader
-- Conversation manager
-- Session manager
-- Local LLM integration through Ollama
+- Conversation Manager
+- Session Manager
 
-#### Project
+### AI
+
+- Ollama integration
+
+### Project Understanding
 
 - Project Analyzer
-- Project Scanner
+- Python Project Scanner
 - Project Query API
 - Project Brain
 
-#### Infrastructure
-
-- Project indexing
-- Python AST analysis
-- Structured project types
-- Basic test suite
-- Project roadmap
-- English documentation
-- Russian documentation
-
-### Changed
-
-- Stabilized core architecture
-- Improved project indexing
-- Unified internal project types
-- Simplified configuration loading
-
-### Fixed
-
-- Fixed Ollama communication issues
-- Fixed session management
-- Fixed project indexing
-- Fixed analyzer data structures
-
 ---
 
-## Upcoming
-
-### Version 0.2
-
-Planned:
-
-- Tool Manager
-- Terminal execution
-- File system tools
-- Git integration
-- Safe command execution
-
-### Version 0.3
-
-Planned:
-
-- Memory Engine
-- Context Builder
-- Semantic Memory
-
-### Version 0.4
-
-Planned:
-
-- Planner
-- Coder
-- Reviewer
-- Autonomous workflows
+The first release established the architectural foundation of AI Studio.

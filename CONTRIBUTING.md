@@ -1,93 +1,146 @@
 # Contributing to AI Studio
 
-Thank you for your interest in contributing to AI Studio.
+Thank you for your interest in AI Studio.
 
-The project is currently in active development, so the architecture may continue to evolve. New contributors are encouraged to discuss significant changes before starting large implementations.
-
----
-
-## Ways to Contribute
-
-You can help by:
-
-- reporting bugs;
-- suggesting improvements;
-- improving documentation;
-- fixing issues;
-- implementing approved features;
-- improving code quality;
-- reviewing pull requests.
+Although the project is currently in the Alpha stage, contributions, bug reports and ideas are welcome.
 
 ---
 
-## Development Principles
+# Development Philosophy
 
-AI Studio follows several important principles.
+AI Studio is developed incrementally.
 
-### Keep modules focused
+Every release introduces one complete subsystem before moving to the next milestone.
 
-Each module should have a single responsibility.
-
-Avoid creating large files responsible for multiple unrelated tasks.
-
-### Keep the architecture modular
-
-Prefer small reusable components over large monolithic implementations.
-
-### Think before coding
-
-New functionality should fit naturally into the existing architecture.
-
-Avoid quick fixes that introduce technical debt.
-
-### Write readable code
-
-Code should be easy to understand without excessive comments.
-
-Meaningful names are preferred over clever implementations.
-
-### Preserve stability
-
-Avoid breaking existing public interfaces unless absolutely necessary.
+Large architectural changes are preferred over isolated feature additions.
 
 ---
 
-## Before Opening a Pull Request
+# Code Style
 
-Please ensure that:
+General principles:
 
-- the project builds successfully;
-- existing tests pass;
-- new functionality includes tests when appropriate;
-- documentation is updated if necessary.
-
----
-
-## Coding Style
-
-General guidelines:
-
-- Use Python 3.
-- Follow PEP 8 where practical.
-- Prefer type hints.
-- Prefer dataclasses for structured data.
-- Keep functions small.
-- Keep classes focused.
+- Write readable code.
+- Prefer simplicity over cleverness.
+- Keep modules independent.
+- Every class should have a single responsibility.
+- Avoid unnecessary dependencies.
 
 ---
 
-## Reporting Issues
+# Tool Development
 
-When reporting a bug, include:
+Every new Tool must:
+
+- inherit from `Tool`;
+- return `ToolResult`;
+- be registered in `ToolManager`;
+- include automated tests;
+- follow the existing project architecture.
+
+Current Tool API:
+
+```python
+class Tool:
+
+    @property
+    def name(self):
+        ...
+
+    def execute(self, action: str, **kwargs):
+        ...
+```
+
+---
+
+# Testing
+
+Before every commit, verify that the project builds successfully.
+
+Compile:
+
+```bash
+python -m py_compile tools/*.py
+python -m py_compile tests/tools/*.py
+```
+
+Run Filesystem Tool tests:
+
+```bash
+python -m tests.tools.test_filesystem
+```
+
+Run Terminal Tool tests:
+
+```bash
+python -m tests.tools.test_terminal
+```
+
+No release should be published while any test is failing.
+
+---
+
+# Commit Style
+
+Recommended commit prefixes:
+
+```text
+feat:
+fix:
+refactor:
+docs:
+test:
+release:
+```
+
+Examples:
+
+```text
+feat(tools): implement FilesystemTool
+
+feat(tools): implement TerminalTool
+
+docs: update README
+
+release: AI Studio v0.2.0-alpha
+```
+
+---
+
+# Pull Requests
+
+Before opening a Pull Request:
+
+- ensure the project builds successfully;
+- run all available tests;
+- update documentation if necessary;
+- keep commits focused on a single feature.
+
+---
+
+# Reporting Issues
+
+When reporting bugs, include:
 
 - operating system;
 - Python version;
 - AI Studio version;
-- steps to reproduce;
+- reproduction steps;
 - expected behavior;
 - actual behavior;
-- error messages or logs.
+- logs if available.
 
 ---
 
-Thank you for helping improve AI Studio.
+# Project Principles
+
+The project follows several long-term principles:
+
+- Local First
+- Modular Architecture
+- Clear Interfaces
+- Automated Testing
+- Incremental Development
+- Transparent AI
+
+These principles should guide every contribution to AI Studio.

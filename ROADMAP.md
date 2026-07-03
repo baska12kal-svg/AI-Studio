@@ -1,165 +1,170 @@
 # AI Studio Roadmap
 
-This roadmap describes the planned evolution of AI Studio.
+This document describes the long-term development plan of AI Studio.
 
-The roadmap is intended to provide a clear overview of the project's direction. Features and priorities may change as the project evolves.
+Every release introduces a complete subsystem rather than a collection of unrelated features.
 
 ---
 
-# Version 0.1 — Core
+# Release Strategy
 
-Status: ✅ Completed
+AI Studio is developed incrementally.
 
-Goal:
+Each version focuses on one major architectural milestone before moving to the next.
 
-Build a stable foundation for the entire system.
+```text
+Core
+    ↓
+Tool System
+    ↓
+Memory Engine
+    ↓
+Development Tools
+    ↓
+Planner
+    ↓
+Orchestrator
+    ↓
+Coding System
+    ↓
+Review System
+    ↓
+Plugin API
+    ↓
+Stable 1.0
+```
 
-Implemented:
+---
 
-- Configuration system
-- Logger
+# v0.1.0-alpha — Core Foundation ✅
+
+Status: Completed
+
+## Goals
+
+- Configuration
+- Logging
 - Prompt Loader
-- Conversation manager
-- Session manager
-- Local LLM integration
+- Conversation
+- Session
+- Ollama Integration
 - Project Analyzer
-- Project Scanner
-- Project Query
+- Python Project Scanner
+- Project Query API
 - Project Brain
 
-Result:
-
-AI Studio can already understand its own project structure and maintain structured conversations with a local language model.
-
 ---
 
-# Version 0.2 — Development Environment
+# v0.2.0-alpha — Tool System ✅
 
-Status: 🚧 In Progress
+Status: Completed
 
-Goal:
+## Goals
 
-Allow AI Studio to interact with the operating system safely.
-
-Planned:
-
+- Unified Tool API
+- Tool Result
+- Tool Registry
 - Tool Manager
-- File system tools
-- Python execution
-- Terminal execution
-- Git integration
-- Safe command execution
-- Tool permissions
-- Tool registry
+- Filesystem Tool
+- Terminal Tool
+- Tool Tests
 
 ---
 
-# Version 0.3 — Memory
+# v0.3.0-alpha — Memory Engine
 
-Status: Planned
+Status: In Progress
 
-Goal:
+## Planned
 
-Provide persistent long-term memory.
-
-Planned:
-
+- Long-term memory
 - Conversation memory
 - Project memory
-- Knowledge storage
 - Semantic search
-- Memory retrieval
-- Memory compression
-- Context builder
+- Memory indexing
+- Persistent storage
 
 ---
 
-# Version 0.4 — Autonomous Agents
+# v0.4.0-alpha — Development Tools
 
-Status: Planned
+## Planned
 
-Goal:
+- Python Tool
+- Git Tool
+- Process Tool
+- Search Tool
+- Extended Tool API
 
-Split responsibilities between specialized AI agents.
+---
 
-Planned:
+# v0.5.0-alpha — Planning System
+
+## Planned
 
 - Planner
-- Coder
-- Reviewer
-- Researcher
-- Documentation Agent
-- Debug Agent
-
-Agents will communicate through structured tasks instead of sharing a single prompt.
+- Task decomposition
+- Progress tracking
+- Dependency management
 
 ---
 
-# Version 0.5 — Project Intelligence
+# v0.6.0-alpha — Orchestrator
 
-Status: Planned
+## Planned
 
-Goal:
-
-Understand software projects at a deeper level.
-
-Planned:
-
-- Dependency graph
-- Symbol graph
-- Class relationships
-- Function references
-- Architecture analysis
-- Code metrics
+- Multi-agent execution
+- Workflow engine
+- Agent communication
+- Tool orchestration
 
 ---
 
-# Version 0.6 — Workflow Automation
+# v0.7.0-alpha — Coding System
 
-Status: Planned
+## Planned
 
-Goal:
-
-Automate common development workflows.
-
-Planned:
-
-- Automatic planning
-- Multi-step execution
-- Self-review
-- Automatic documentation
-- Git workflow automation
+- Code Generator
+- Refactoring
+- Documentation Generator
+- Test Generator
 
 ---
 
-# Version 0.7 — Plugin System
+# v0.8.0-alpha — Review System
 
-Status: Planned
+## Planned
 
-Goal:
+- Code Review
+- Performance Analysis
+- Security Review
+- Static Analysis
 
-Allow external extensions.
+---
 
-Planned:
+# v0.9.0-beta
+
+## Planned
 
 - Plugin API
-- Custom agents
-- Custom tools
-- Event system
+- Extension System
+- Public API
+- Stability improvements
+- Performance optimization
 
 ---
 
-# Version 1.0
+# v1.0.0
 
-Goal:
+First stable public release.
 
-A complete local AI software engineering environment capable of:
+Goals:
 
-- understanding projects;
-- planning development;
-- generating code;
-- reviewing code;
-- using development tools;
-- working completely offline.
-
-Version 1.0 represents the first stable public release of AI Studio.
+- Complete local software engineering environment
+- Long-term memory
+- Autonomous planning
+- Tool ecosystem
+- Code generation
+- Code review
+- Git integration
+- Plugin support
